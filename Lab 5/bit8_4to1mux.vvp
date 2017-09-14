@@ -1,0 +1,327 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_02003390 .scope module, "bit8_4to1mux" "bit8_4to1mux" 2 3;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 8 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 8 "in1"
+    .port_info 4 /INPUT 8 "in2"
+    .port_info 5 /INPUT 8 "in3"
+    .port_info 6 /INPUT 8 "in4"
+o02012d7c .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v020407c0_0 .net "in1", 7 0, o02012d7c;  0 drivers
+o02012d94 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v02040818_0 .net "in2", 7 0, o02012d94;  0 drivers
+o02012dac .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v02040870_0 .net "in3", 7 0, o02012dac;  0 drivers
+o02012dc4 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v020408c8_0 .net "in4", 7 0, o02012dc4;  0 drivers
+v02040920_0 .net "out", 7 0, L_02043d50;  1 drivers
+o020120d4 .functor BUFZ 1, C4<z>; HiZ drive
+v02040978_0 .net "sel1", 0 0, o020120d4;  0 drivers
+o020120ec .functor BUFZ 1, C4<z>; HiZ drive
+v020409d0_0 .net "sel2", 0 0, o020120ec;  0 drivers
+L_02040a28 .part o02012d7c, 0, 1;
+L_02040a80 .part o02012d94, 0, 1;
+L_02040ad8 .part o02012dac, 0, 1;
+L_02040b30 .part o02012dc4, 0, 1;
+L_02040b88 .part o02012d7c, 1, 1;
+L_02040be0 .part o02012d94, 1, 1;
+L_02040c38 .part o02012dac, 1, 1;
+L_02040c90 .part o02012dc4, 1, 1;
+L_02040ce8 .part o02012d7c, 2, 1;
+L_02040d40 .part o02012d94, 2, 1;
+L_02040d98 .part o02012dac, 2, 1;
+L_02040df0 .part o02012dc4, 2, 1;
+L_02040e48 .part o02012d7c, 3, 1;
+L_02040ea0 .part o02012d94, 3, 1;
+L_02040ef8 .part o02012dac, 3, 1;
+L_02040f50 .part o02012dc4, 3, 1;
+L_02040fa8 .part o02012d7c, 4, 1;
+L_02041000 .part o02012d94, 4, 1;
+L_02041058 .part o02012dac, 4, 1;
+L_020410b0 .part o02012dc4, 4, 1;
+L_02041108 .part o02012d7c, 5, 1;
+L_02041160 .part o02012d94, 5, 1;
+L_020411b8 .part o02012dac, 5, 1;
+L_02041210 .part o02012dc4, 5, 1;
+L_02041268 .part o02012d7c, 6, 1;
+L_02043c48 .part o02012d94, 6, 1;
+L_02043ca0 .part o02012dac, 6, 1;
+L_02043cf8 .part o02012dc4, 6, 1;
+LS_02043d50_0_0 .concat8 [ 1 1 1 1], L_02041770, L_02042180, L_02042378, L_02042570;
+LS_02043d50_0_4 .concat8 [ 1 1 1 1], L_02042768, L_02042960, L_02042b58, L_02042d50;
+L_02043d50 .concat8 [ 4 4 0 0], LS_02043d50_0_0, LS_02043d50_0_4;
+L_02043da8 .part o02012d7c, 7, 1;
+L_02043e00 .part o02012d94, 7, 1;
+L_02043e58 .part o02012dac, 7, 1;
+L_02043eb0 .part o02012dc4, 7, 1;
+S_00893b68 .scope generate, "mux_loop[0]" "mux_loop[0]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089ebe0 .param/l "j" 0 2 9, +C4<00>;
+S_00893c38 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_00893b68;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_0200de80 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_0200dec8 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02041650 .functor AND 1, L_0200de80, L_0200dec8, L_02040a28, C4<1>;
+L_02041698 .functor AND 1, L_0200de80, o020120ec, L_02040a80, C4<1>;
+L_020416e0 .functor AND 1, o020120d4, L_0200dec8, L_02040ad8, C4<1>;
+L_02041728 .functor AND 1, o020120d4, o020120ec, L_02040b30, C4<1>;
+L_02041770 .functor OR 1, L_02041650, L_02041698, L_020416e0, L_02041728;
+v0200a9d8_0 .net "a1", 0 0, L_02041650;  1 drivers
+v0200aa30_0 .net "a2", 0 0, L_02041698;  1 drivers
+v0200aa88_0 .net "a3", 0 0, L_020416e0;  1 drivers
+v0200aae0_0 .net "a4", 0 0, L_02041728;  1 drivers
+v0200ab38_0 .net "in1", 0 0, L_02040a28;  1 drivers
+v0200ab90_0 .net "in2", 0 0, L_02040a80;  1 drivers
+v0200abe8_0 .net "in3", 0 0, L_02040ad8;  1 drivers
+v0200ac40_0 .net "in4", 0 0, L_02040b30;  1 drivers
+v0200ac98_0 .net "not_sel1", 0 0, L_0200de80;  1 drivers
+v0200acf0_0 .net "not_sel2", 0 0, L_0200dec8;  1 drivers
+v0200ad48_0 .net "out", 0 0, L_02041770;  1 drivers
+v0200ada0_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v0200adf8_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+S_0089e538 .scope generate, "mux_loop[1]" "mux_loop[1]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089ec08 .param/l "j" 0 2 9, +C4<01>;
+S_0089e608 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_0089e538;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_02041fb8 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_02042000 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02042060 .functor AND 1, L_02041fb8, L_02042000, L_02040b88, C4<1>;
+L_020420a8 .functor AND 1, L_02041fb8, o020120ec, L_02040be0, C4<1>;
+L_020420f0 .functor AND 1, o020120d4, L_02042000, L_02040c38, C4<1>;
+L_02042138 .functor AND 1, o020120d4, o020120ec, L_02040c90, C4<1>;
+L_02042180 .functor OR 1, L_02042060, L_020420a8, L_020420f0, L_02042138;
+v0200ae50_0 .net "a1", 0 0, L_02042060;  1 drivers
+v0200aea8_0 .net "a2", 0 0, L_020420a8;  1 drivers
+v0200af00_0 .net "a3", 0 0, L_020420f0;  1 drivers
+v0200af58_0 .net "a4", 0 0, L_02042138;  1 drivers
+v0200afb0_0 .net "in1", 0 0, L_02040b88;  1 drivers
+v0200b008_0 .net "in2", 0 0, L_02040be0;  1 drivers
+v0200b060_0 .net "in3", 0 0, L_02040c38;  1 drivers
+v0200b0b8_0 .net "in4", 0 0, L_02040c90;  1 drivers
+v0200b110_0 .net "not_sel1", 0 0, L_02041fb8;  1 drivers
+v0200b168_0 .net "not_sel2", 0 0, L_02042000;  1 drivers
+v0200b1c0_0 .net "out", 0 0, L_02042180;  1 drivers
+v0200b218_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v0200b270_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+S_0200d910 .scope generate, "mux_loop[2]" "mux_loop[2]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089ec58 .param/l "j" 0 2 9, +C4<010>;
+S_0200d9e0 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_0200d910;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_020421c8 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_02042210 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02042258 .functor AND 1, L_020421c8, L_02042210, L_02040ce8, C4<1>;
+L_020422a0 .functor AND 1, L_020421c8, o020120ec, L_02040d40, C4<1>;
+L_020422e8 .functor AND 1, o020120d4, L_02042210, L_02040d98, C4<1>;
+L_02042330 .functor AND 1, o020120d4, o020120ec, L_02040df0, C4<1>;
+L_02042378 .functor OR 1, L_02042258, L_020422a0, L_020422e8, L_02042330;
+v0200b2c8_0 .net "a1", 0 0, L_02042258;  1 drivers
+v0200b320_0 .net "a2", 0 0, L_020422a0;  1 drivers
+v0200b378_0 .net "a3", 0 0, L_020422e8;  1 drivers
+v0200b3d0_0 .net "a4", 0 0, L_02042330;  1 drivers
+v0200b428_0 .net "in1", 0 0, L_02040ce8;  1 drivers
+v0200b480_0 .net "in2", 0 0, L_02040d40;  1 drivers
+v0200b4d8_0 .net "in3", 0 0, L_02040d98;  1 drivers
+v0200b530_0 .net "in4", 0 0, L_02040df0;  1 drivers
+v0200b588_0 .net "not_sel1", 0 0, L_020421c8;  1 drivers
+v0200b5e0_0 .net "not_sel2", 0 0, L_02042210;  1 drivers
+v0200b638_0 .net "out", 0 0, L_02042378;  1 drivers
+v0200b690_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v0200b6e8_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+S_0200dab0 .scope generate, "mux_loop[3]" "mux_loop[3]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089eca8 .param/l "j" 0 2 9, +C4<011>;
+S_0200db80 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_0200dab0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_020423c0 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_02042408 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02042450 .functor AND 1, L_020423c0, L_02042408, L_02040e48, C4<1>;
+L_02042498 .functor AND 1, L_020423c0, o020120ec, L_02040ea0, C4<1>;
+L_020424e0 .functor AND 1, o020120d4, L_02042408, L_02040ef8, C4<1>;
+L_02042528 .functor AND 1, o020120d4, o020120ec, L_02040f50, C4<1>;
+L_02042570 .functor OR 1, L_02042450, L_02042498, L_020424e0, L_02042528;
+v0200b740_0 .net "a1", 0 0, L_02042450;  1 drivers
+v0200b798_0 .net "a2", 0 0, L_02042498;  1 drivers
+v0200b7f0_0 .net "a3", 0 0, L_020424e0;  1 drivers
+v0200b848_0 .net "a4", 0 0, L_02042528;  1 drivers
+v0200b8a0_0 .net "in1", 0 0, L_02040e48;  1 drivers
+v0203eff0_0 .net "in2", 0 0, L_02040ea0;  1 drivers
+v0203f048_0 .net "in3", 0 0, L_02040ef8;  1 drivers
+v0203f0a0_0 .net "in4", 0 0, L_02040f50;  1 drivers
+v0203f0f8_0 .net "not_sel1", 0 0, L_020423c0;  1 drivers
+v0203f150_0 .net "not_sel2", 0 0, L_02042408;  1 drivers
+v0203f1a8_0 .net "out", 0 0, L_02042570;  1 drivers
+v0203f200_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v0203f258_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+S_0200dc98 .scope generate, "mux_loop[4]" "mux_loop[4]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089ed48 .param/l "j" 0 2 9, +C4<0100>;
+S_0200dd68 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_0200dc98;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_020425b8 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_02042600 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02042648 .functor AND 1, L_020425b8, L_02042600, L_02040fa8, C4<1>;
+L_02042690 .functor AND 1, L_020425b8, o020120ec, L_02041000, C4<1>;
+L_020426d8 .functor AND 1, o020120d4, L_02042600, L_02041058, C4<1>;
+L_02042720 .functor AND 1, o020120d4, o020120ec, L_020410b0, C4<1>;
+L_02042768 .functor OR 1, L_02042648, L_02042690, L_020426d8, L_02042720;
+v0203f2b0_0 .net "a1", 0 0, L_02042648;  1 drivers
+v0203f308_0 .net "a2", 0 0, L_02042690;  1 drivers
+v0203f360_0 .net "a3", 0 0, L_020426d8;  1 drivers
+v0203f3b8_0 .net "a4", 0 0, L_02042720;  1 drivers
+v0203f410_0 .net "in1", 0 0, L_02040fa8;  1 drivers
+v0203f468_0 .net "in2", 0 0, L_02041000;  1 drivers
+v0203f4c0_0 .net "in3", 0 0, L_02041058;  1 drivers
+v0203f518_0 .net "in4", 0 0, L_020410b0;  1 drivers
+v0203f570_0 .net "not_sel1", 0 0, L_020425b8;  1 drivers
+v0203f5c8_0 .net "not_sel2", 0 0, L_02042600;  1 drivers
+v0203f620_0 .net "out", 0 0, L_02042768;  1 drivers
+v0203f678_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v0203f6d0_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+S_0200df50 .scope generate, "mux_loop[5]" "mux_loop[5]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089ed70 .param/l "j" 0 2 9, +C4<0101>;
+S_0203ffd8 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_0200df50;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_020427b0 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_020427f8 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02042840 .functor AND 1, L_020427b0, L_020427f8, L_02041108, C4<1>;
+L_02042888 .functor AND 1, L_020427b0, o020120ec, L_02041160, C4<1>;
+L_020428d0 .functor AND 1, o020120d4, L_020427f8, L_020411b8, C4<1>;
+L_02042918 .functor AND 1, o020120d4, o020120ec, L_02041210, C4<1>;
+L_02042960 .functor OR 1, L_02042840, L_02042888, L_020428d0, L_02042918;
+v0203f728_0 .net "a1", 0 0, L_02042840;  1 drivers
+v0203f780_0 .net "a2", 0 0, L_02042888;  1 drivers
+v0203f7d8_0 .net "a3", 0 0, L_020428d0;  1 drivers
+v0203f830_0 .net "a4", 0 0, L_02042918;  1 drivers
+v0203f888_0 .net "in1", 0 0, L_02041108;  1 drivers
+v0203f8e0_0 .net "in2", 0 0, L_02041160;  1 drivers
+v0203f938_0 .net "in3", 0 0, L_020411b8;  1 drivers
+v0203f990_0 .net "in4", 0 0, L_02041210;  1 drivers
+v0203f9e8_0 .net "not_sel1", 0 0, L_020427b0;  1 drivers
+v0203fa40_0 .net "not_sel2", 0 0, L_020427f8;  1 drivers
+v0203fa98_0 .net "out", 0 0, L_02042960;  1 drivers
+v0203faf0_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v0203fb48_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+S_020400f0 .scope generate, "mux_loop[6]" "mux_loop[6]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089edc0 .param/l "j" 0 2 9, +C4<0110>;
+S_020401c0 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_020400f0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_020429a8 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_020429f0 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02042a38 .functor AND 1, L_020429a8, L_020429f0, L_02041268, C4<1>;
+L_02042a80 .functor AND 1, L_020429a8, o020120ec, L_02043c48, C4<1>;
+L_02042ac8 .functor AND 1, o020120d4, L_020429f0, L_02043ca0, C4<1>;
+L_02042b10 .functor AND 1, o020120d4, o020120ec, L_02043cf8, C4<1>;
+L_02042b58 .functor OR 1, L_02042a38, L_02042a80, L_02042ac8, L_02042b10;
+v0203fba0_0 .net "a1", 0 0, L_02042a38;  1 drivers
+v0203fbf8_0 .net "a2", 0 0, L_02042a80;  1 drivers
+v0203fc50_0 .net "a3", 0 0, L_02042ac8;  1 drivers
+v0203fca8_0 .net "a4", 0 0, L_02042b10;  1 drivers
+v0203fd00_0 .net "in1", 0 0, L_02041268;  1 drivers
+v0203fd58_0 .net "in2", 0 0, L_02043c48;  1 drivers
+v0203fdb0_0 .net "in3", 0 0, L_02043ca0;  1 drivers
+v0203fe08_0 .net "in4", 0 0, L_02043cf8;  1 drivers
+v0203fe60_0 .net "not_sel1", 0 0, L_020429a8;  1 drivers
+v0203feb8_0 .net "not_sel2", 0 0, L_020429f0;  1 drivers
+v0203ff10_0 .net "out", 0 0, L_02042b58;  1 drivers
+v0203ff68_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v020402f0_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+S_020412d8 .scope generate, "mux_loop[7]" "mux_loop[7]" 2 9, 2 9 0, S_02003390;
+ .timescale 0 0;
+P_0089ee10 .param/l "j" 0 2 9, +C4<0111>;
+S_020413a8 .scope module, "m1" "mux4to1" 2 11, 3 1 0, S_020412d8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "sel1"
+    .port_info 2 /INPUT 1 "sel2"
+    .port_info 3 /INPUT 1 "in1"
+    .port_info 4 /INPUT 1 "in2"
+    .port_info 5 /INPUT 1 "in3"
+    .port_info 6 /INPUT 1 "in4"
+L_02042ba0 .functor NOT 1, o020120d4, C4<0>, C4<0>, C4<0>;
+L_02042be8 .functor NOT 1, o020120ec, C4<0>, C4<0>, C4<0>;
+L_02042c30 .functor AND 1, L_02042ba0, L_02042be8, L_02043da8, C4<1>;
+L_02042c78 .functor AND 1, L_02042ba0, o020120ec, L_02043e00, C4<1>;
+L_02042cc0 .functor AND 1, o020120d4, L_02042be8, L_02043e58, C4<1>;
+L_02042d08 .functor AND 1, o020120d4, o020120ec, L_02043eb0, C4<1>;
+L_02042d50 .functor OR 1, L_02042c30, L_02042c78, L_02042cc0, L_02042d08;
+v02040348_0 .net "a1", 0 0, L_02042c30;  1 drivers
+v020403a0_0 .net "a2", 0 0, L_02042c78;  1 drivers
+v020403f8_0 .net "a3", 0 0, L_02042cc0;  1 drivers
+v02040450_0 .net "a4", 0 0, L_02042d08;  1 drivers
+v020404a8_0 .net "in1", 0 0, L_02043da8;  1 drivers
+v02040500_0 .net "in2", 0 0, L_02043e00;  1 drivers
+v02040558_0 .net "in3", 0 0, L_02043e58;  1 drivers
+v020405b0_0 .net "in4", 0 0, L_02043eb0;  1 drivers
+v02040608_0 .net "not_sel1", 0 0, L_02042ba0;  1 drivers
+v02040660_0 .net "not_sel2", 0 0, L_02042be8;  1 drivers
+v020406b8_0 .net "out", 0 0, L_02042d50;  1 drivers
+v02040710_0 .net "sel1", 0 0, o020120d4;  alias, 0 drivers
+v02040768_0 .net "sel2", 0 0, o020120ec;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "bit8_4to1mux.v";
+    "./mux4to1.v";
