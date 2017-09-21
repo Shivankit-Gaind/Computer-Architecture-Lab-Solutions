@@ -13,7 +13,7 @@ module ALU(a,b,Binvert,Carryin,Operation,Result,CarryOut);
 	wire [31:0] and_output,or_output, add_output;
 	wire [31:0] b_final,not_b;
 	
-	assign not_b = !b;	
+	assign not_b = ~b;	
 	
 	bit32_2to1mux m1(b_final,Binvert,b,not_b);
 	bit32AND and_op(and_output, a, b_final);

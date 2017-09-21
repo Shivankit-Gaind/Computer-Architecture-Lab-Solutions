@@ -1,0 +1,54 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_007c3b78 .scope module, "ALU_control" "ALU_control" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "ALUop"
+    .port_info 1 /INPUT 6 "funct_field"
+    .port_info 2 /OUTPUT 3 "operation"
+L_007ce490 .functor AND 1, L_01ff04e8, L_01ff0540, C4<1>, C4<1>;
+L_007c3cf8 .functor OR 1, L_01ff0490, L_007ce490, C4<0>, C4<0>;
+L_01ff3058 .functor NOT 1, L_01ff0598, C4<0>, C4<0>, C4<0>;
+L_01ff30a0 .functor NOT 1, L_01ff05f0, C4<0>, C4<0>, C4<0>;
+L_01ff30e8 .functor OR 1, L_01ff3058, L_01ff30a0, C4<0>, C4<0>;
+L_01ff3200 .functor OR 1, L_01ff06f8, L_01ff0750, C4<0>, C4<0>;
+L_01ff3248 .functor AND 1, L_01ff06a0, L_01ff3200, C4<1>, C4<1>;
+o01fc004c .functor BUFZ 2, C4<zz>; HiZ drive
+v007cd000_0 .net "ALUop", 1 0, o01fc004c;  0 drivers
+v007ce438_0 .net *"_s10", 0 0, L_007c3cf8;  1 drivers
+v007cdc90_0 .net *"_s15", 0 0, L_01ff0598;  1 drivers
+v007cdce8_0 .net *"_s16", 0 0, L_01ff3058;  1 drivers
+v007c3c48_0 .net *"_s19", 0 0, L_01ff05f0;  1 drivers
+v007c3ca0_0 .net *"_s20", 0 0, L_01ff30a0;  1 drivers
+v01ff0070_0 .net *"_s22", 0 0, L_01ff30e8;  1 drivers
+v01ff00c8_0 .net *"_s28", 0 0, L_01ff06a0;  1 drivers
+v01ff0120_0 .net *"_s3", 0 0, L_01ff0490;  1 drivers
+v01ff0178_0 .net *"_s30", 0 0, L_01ff06f8;  1 drivers
+v01ff01d0_0 .net *"_s32", 0 0, L_01ff0750;  1 drivers
+v01ff0228_0 .net *"_s33", 0 0, L_01ff3200;  1 drivers
+v01ff0280_0 .net *"_s35", 0 0, L_01ff3248;  1 drivers
+v01ff02d8_0 .net *"_s5", 0 0, L_01ff04e8;  1 drivers
+v01ff0330_0 .net *"_s7", 0 0, L_01ff0540;  1 drivers
+v01ff0388_0 .net *"_s8", 0 0, L_007ce490;  1 drivers
+o01fc01cc .functor BUFZ 6, C4<zzzzzz>; HiZ drive
+v01ff03e0_0 .net "funct_field", 5 0, o01fc01cc;  0 drivers
+v01ff0438_0 .net "operation", 2 0, L_01ff0648;  1 drivers
+L_01ff0490 .part o01fc004c, 0, 1;
+L_01ff04e8 .part o01fc004c, 1, 1;
+L_01ff0540 .part o01fc01cc, 1, 1;
+L_01ff0598 .part o01fc004c, 1, 1;
+L_01ff05f0 .part o01fc01cc, 2, 1;
+L_01ff0648 .concat8 [ 1 1 1 0], L_01ff3248, L_01ff30e8, L_007c3cf8;
+L_01ff06a0 .part o01fc004c, 1, 1;
+L_01ff06f8 .part o01fc01cc, 3, 1;
+L_01ff0750 .part o01fc01cc, 0, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "ALU_control.v";
